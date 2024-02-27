@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:sparebess/views/login_screens/login_view.dart';
 import 'package:sparebess/views/navigation_view.dart';
+import 'package:sparebess/views/login_screens/number_verification.dart';
 
-import '../constants.dart';
+import '../../constants.dart';
 
 class RegisterView extends StatefulWidget {
   @override
@@ -42,9 +44,9 @@ class _RegisterViewState extends State<RegisterView> {
                     'Register Now',
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: "Lato"),
                   ),
                 ),
                 Form(
@@ -59,9 +61,9 @@ class _RegisterViewState extends State<RegisterView> {
                             'User Name',
                             textAlign: TextAlign.center,
                             style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.bold,
-                            ),
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: "Lato"),
                           ),
                         ),
                       ),
@@ -103,9 +105,9 @@ class _RegisterViewState extends State<RegisterView> {
                             'User Mobile Number',
                             textAlign: TextAlign.left,
                             style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.bold,
-                            ),
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: "Lato"),
                           ),
                         ),
                       ),
@@ -147,9 +149,9 @@ class _RegisterViewState extends State<RegisterView> {
                             'Create Password',
                             textAlign: TextAlign.left,
                             style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.bold,
-                            ),
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: "Lato"),
                           ),
                         ),
                       ),
@@ -191,9 +193,9 @@ class _RegisterViewState extends State<RegisterView> {
                             'Confirm Your Password',
                             textAlign: TextAlign.left,
                             style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.bold,
-                            ),
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: "Lato"),
                           ),
                         ),
                       ),
@@ -241,23 +243,24 @@ class _RegisterViewState extends State<RegisterView> {
                                 });
                               },
                               activeColor: appthemecolor,
+                              visualDensity: VisualDensity.compact,
                             ),
                             Text(
                               "By entering your number.you're agreeing to our ",
                               style: TextStyle(
-                                fontSize: 12.0,
-                                color: Colors.black,
-                                fontWeight: FontWeight.w400,
-                              ),
+                                  fontSize: 12.0,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w400,
+                                  fontFamily: "Lato"),
                             ),
                             Text(
                               "Terms of",
                               style: TextStyle(
-                                fontSize: 12,
-                                color: appthemecolor,
-                                decoration: TextDecoration.underline,
-                                decorationColor: appthemecolor,
-                              ),
+                                  fontSize: 12,
+                                  color: appthemecolor,
+                                  decoration: TextDecoration.underline,
+                                  decorationColor: appthemecolor,
+                                  fontFamily: "Lato"),
                             ),
                           ],
                         ),
@@ -269,34 +272,34 @@ class _RegisterViewState extends State<RegisterView> {
                             Text(
                               "Services ",
                               style: TextStyle(
-                                fontSize: 12,
-                                color: appthemecolor,
-                                decoration: TextDecoration.underline,
-                                decorationColor: appthemecolor,
-                              ),
+                                  fontSize: 12,
+                                  color: appthemecolor,
+                                  decoration: TextDecoration.underline,
+                                  decorationColor: appthemecolor,
+                                  fontFamily: "Lato"),
                             ),
                             Text(
                               "and ",
                               style: TextStyle(
-                                fontSize: 12,
-                                color: Colors.black,
-                              ),
+                                  fontSize: 12,
+                                  color: Colors.black,
+                                  fontFamily: "Lato"),
                             ),
                             Text(
                               "Privacy policy ",
                               style: TextStyle(
-                                fontSize: 12,
-                                color: appthemecolor,
-                                decoration: TextDecoration.underline,
-                                decorationColor: appthemecolor,
-                              ),
+                                  fontSize: 12,
+                                  color: appthemecolor,
+                                  decoration: TextDecoration.underline,
+                                  decorationColor: appthemecolor,
+                                  fontFamily: "Lato"),
                             ),
                             Text(
                               "Thanks!",
                               style: TextStyle(
-                                fontSize: 12,
-                                color: Colors.black,
-                              ),
+                                  fontSize: 12,
+                                  color: Colors.black,
+                                  fontFamily: "Lato"),
                             ),
                           ],
                         ),
@@ -308,18 +311,22 @@ class _RegisterViewState extends State<RegisterView> {
                             Text(
                               "Already have an account?",
                               style: TextStyle(
-                                fontSize: 14.0,
-                                color: Colors.black,
-                                fontWeight: FontWeight.w600,
-                              ),
+                                  fontSize: 14.0,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w600,
+                                  fontFamily: "Lato"),
                             ),
                             TextButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => LoginView()));
+                              },
                               child: Text(
-                                "Sign up",
+                                "Login",
                                 style: TextStyle(
-                                  color: appthemecolor,
-                                ),
+                                    color: appthemecolor, fontFamily: "Lato"),
                               ),
                             ),
                           ],
@@ -333,14 +340,21 @@ class _RegisterViewState extends State<RegisterView> {
                           height: 55,
                           child: ElevatedButton(
                             onPressed: () {
-                              /*if (_formKey.currentState!.validate()) {
-                                print("Form is valid");
-                              }*/
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) =>
-                                          BottomBarNavigation()));
+                                          NumberVerificationView()));
+                              /*if (_formKey.currentState!.validate()) {
+                                print("Form is valid");
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            BottomBarNavigation()));
+                              } else {
+                                null;
+                              }*/
                             },
                             style: ElevatedButton.styleFrom(
                               backgroundColor: appthemecolor,
@@ -351,12 +365,12 @@ class _RegisterViewState extends State<RegisterView> {
                               elevation: 8,
                             ),
                             child: Text(
-                              "Login",
+                              "Register",
                               style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600,
-                                color: Colors.white,
-                              ),
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w600,
+                                  color: Colors.white,
+                                  fontFamily: "Lato"),
                             ),
                           ),
                         ),

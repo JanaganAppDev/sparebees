@@ -31,7 +31,6 @@ class _CategoriesState extends State<Categories> {
     "Lights",
     "Accessories",
     "Others",
-    // Add more category names as needed
   ];
   @override
   Widget build(BuildContext context) {
@@ -42,12 +41,15 @@ class _CategoriesState extends State<Categories> {
     return Column(
       children: [
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 8),
+          padding: EdgeInsets.only(left: 10.0, bottom: 8),
           child: Align(
             alignment: Alignment.centerLeft,
             child: Text(
               "Categories",
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: "Lato"),
             ),
           ),
         ),
@@ -89,7 +91,9 @@ class _CategoriesState extends State<Categories> {
                         Text(
                           categoryNames[index],
                           style: TextStyle(
-                              fontSize: 12, fontWeight: FontWeight.w600),
+                              fontSize: 12,
+                              fontWeight: FontWeight.w600,
+                              fontFamily: "Lato"),
                         ),
                       ],
                     );
@@ -99,18 +103,19 @@ class _CategoriesState extends State<Categories> {
             ],
           ),
         ),
-        SizedBox(height: 15.0),
         Padding(
           padding: EdgeInsets.symmetric(vertical: 8),
           child: Align(
             alignment: Alignment.centerLeft,
             child: Text(
               "What's Hot",
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: "Lato"),
             ),
           ),
         ),
-        SizedBox(height: 5.0),
         Row(
           children: [
             Expanded(
@@ -128,14 +133,13 @@ class _CategoriesState extends State<Categories> {
                       child: Text(
                         "  PREMIUM AIR\n  FILTERS",
                         style: TextStyle(
-                          fontWeight: FontWeight.w700,
-                          fontSize: 10,
-                        ),
+                            fontWeight: FontWeight.w700,
+                            fontSize: 10,
+                            fontFamily: "Lato"),
                       ),
                     ),
                     Row(
-                      crossAxisAlignment:
-                          CrossAxisAlignment.start, // Align both to start
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Image.asset(
                           'lib/images/categories/categories6.png',
@@ -143,8 +147,7 @@ class _CategoriesState extends State<Categories> {
                           width: 75.0,
                           alignment: Alignment.center,
                         ),
-                        SizedBox(
-                            width: 8), // Add spacing between image and text
+                        SizedBox(width: 8),
                         Column(
                           crossAxisAlignment:
                               CrossAxisAlignment.start, // Align to start
@@ -152,10 +155,10 @@ class _CategoriesState extends State<Categories> {
                             Text(
                               "20 %",
                               style: TextStyle(
-                                fontSize: 22,
-                                color: Colors.red,
-                                fontWeight: FontWeight.bold,
-                              ),
+                                  fontSize: 22,
+                                  color: Colors.red,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: "Lato"),
                             ),
                             Container(
                               height: 30,
@@ -175,9 +178,9 @@ class _CategoriesState extends State<Categories> {
                                     Text(
                                       "Shop Now",
                                       style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 6.0,
-                                      ),
+                                          color: Colors.white,
+                                          fontSize: 6.0,
+                                          fontFamily: "Lato"),
                                     ),
                                     Icon(
                                       Icons.arrow_forward_ios,
@@ -212,14 +215,13 @@ class _CategoriesState extends State<Categories> {
                       child: Text(
                         "  PREMIUM AIR\n  FILTERS",
                         style: TextStyle(
-                          fontWeight: FontWeight.w700,
-                          fontSize: 10,
-                        ),
+                            fontWeight: FontWeight.w700,
+                            fontSize: 10,
+                            fontFamily: "Lato"),
                       ),
                     ),
                     Row(
-                      crossAxisAlignment:
-                          CrossAxisAlignment.start, // Align both to start
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Image.asset(
                           'lib/images/categories/categories7.png',
@@ -227,8 +229,7 @@ class _CategoriesState extends State<Categories> {
                           width: 75.0,
                           alignment: Alignment.center,
                         ),
-                        SizedBox(
-                            width: 8), // Add spacing between image and text
+                        SizedBox(width: 8),
                         Column(
                           crossAxisAlignment:
                               CrossAxisAlignment.start, // Align to start
@@ -236,10 +237,10 @@ class _CategoriesState extends State<Categories> {
                             Text(
                               "50 %",
                               style: TextStyle(
-                                fontSize: 22,
-                                color: Colors.red,
-                                fontWeight: FontWeight.bold,
-                              ),
+                                  fontSize: 22,
+                                  color: Colors.red,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: "Lato"),
                             ),
                             Container(
                               height: 30,
@@ -259,9 +260,9 @@ class _CategoriesState extends State<Categories> {
                                     Text(
                                       "Shop Now",
                                       style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 6.0,
-                                      ),
+                                          color: Colors.white,
+                                          fontSize: 6.0,
+                                          fontFamily: "Lato"),
                                     ),
                                     Icon(
                                       Icons.arrow_forward_ios,
@@ -282,14 +283,16 @@ class _CategoriesState extends State<Categories> {
             ),
           ],
         ),
-        SizedBox(height: 15.0),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 8),
           child: Align(
             alignment: Alignment.centerLeft,
             child: Text(
               "Best Seller",
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: "Lato"),
             ),
           ),
         ),
@@ -349,10 +352,10 @@ class _CategoriesState extends State<Categories> {
                         child: Text(
                           "Bybre Brakes",
                           style: TextStyle(
-                            fontSize: 15.0,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black,
-                          ),
+                              fontSize: 15.0,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                              fontFamily: "Lato"),
                         ),
                       ),
                       Padding(
@@ -362,8 +365,7 @@ class _CategoriesState extends State<Categories> {
                             Text(
                               "4.8",
                               style: TextStyle(
-                                color: Colors.grey[700],
-                              ),
+                                  color: Colors.grey[700], fontFamily: "Lato"),
                             ),
                             Icon(
                               Icons.star,
@@ -373,8 +375,7 @@ class _CategoriesState extends State<Categories> {
                             Text(
                               "(248 Ratings)",
                               style: TextStyle(
-                                color: Colors.grey[500],
-                              ),
+                                  color: Colors.grey[500], fontFamily: "Lato"),
                             ),
                           ],
                         ),
@@ -387,19 +388,21 @@ class _CategoriesState extends State<Categories> {
                             Text(
                               "Rs.599",
                               style: TextStyle(
-                                fontSize: 15.0,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.green,
-                              ),
+                                  fontSize: 15.0,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.green,
+                                  fontFamily: "Lato"),
                             ),
                             Text(
                               "Rs.699",
                               style: TextStyle(
-                                fontSize: 15.0,
-                                color: Colors.grey,
-                                fontWeight: FontWeight.bold,
-                                decoration: TextDecoration.lineThrough,
-                              ),
+                                  fontSize: 15.0,
+                                  color: Colors.grey,
+                                  fontWeight: FontWeight.bold,
+                                  decoration: TextDecoration.lineThrough,
+                                  decorationColor: Colors.grey,
+                                  decorationThickness: 1.0,
+                                  fontFamily: "Lato"),
                             ),
                           ],
                         ),

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../constants.dart';
+import 'navigation_view.dart';
+
 class CheckOutView extends StatefulWidget {
   CheckOutView({super.key, this.onChanged});
 
@@ -20,18 +23,24 @@ class _CheckOutViewState extends State<CheckOutView> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          onPressed: () {},
-          icon: Icon(Icons.arrow_back_ios_sharp),
+          icon: Icon(Icons.chevron_left),
+          onPressed: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => BottomBarNavigation()));
+          },
         ),
         title: Text(
           "Checkout",
           style: TextStyle(
-              fontWeight: FontWeight.bold, fontSize: 25.0, color: Colors.red),
+              fontFamily: "Lato",
+              fontSize: 16,
+              color: appthemecolor,
+              fontWeight: FontWeight.w600),
         ),
         centerTitle: true,
       ),
       body: Container(
-        margin: EdgeInsets.symmetric(horizontal: 10.0),
+        margin: EdgeInsets.symmetric(horizontal: 15.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -43,33 +52,40 @@ class _CheckOutViewState extends State<CheckOutView> {
                   SizedBox(height: 10.0),
                   Text(
                     "Sparebees",
-                    style:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 14.0,
+                      fontFamily: "Lato",
+                    ),
                   ),
                   SizedBox(height: 10.0),
                   Text(
                     "101, Aj Street, Puducherry - 605005\n6374224165",
+                    style: TextStyle(fontFamily: "Lato", fontSize: 12),
                   ),
                   SizedBox(height: 10.0),
                   Text(
                     "Your Cart",
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 20.0,
-                        color: Colors.red),
+                        fontSize: 14.0,
+                        fontFamily: "Lato",
+                        color: appthemecolor),
                   ),
                   SizedBox(height: 10.0),
                   Row(
                     children: [
                       Container(
-                        height: 140,
-                        width: 180,
+                        height: 120,
+                        width: 140,
                         decoration: BoxDecoration(
-                            border: Border.all(color: Colors.red),
+                            border: Border.all(color: appthemecolor),
                             borderRadius: BorderRadius.circular(20.0),
                             image: DecorationImage(
-                                image: AssetImage("lib/assets/img_1.png"),
-                                fit: BoxFit.fitHeight),
+                              image: AssetImage("lib/images/tyres/tr1.png"),
+                              scale: 0.6,
+                              //fit: BoxFit.fitHeight,
+                            ),
                             color: Colors.white),
                       ),
                       Padding(
@@ -80,7 +96,10 @@ class _CheckOutViewState extends State<CheckOutView> {
                             Text(
                               "Apollo ACTIGRIP R",
                               style: TextStyle(
-                                  fontSize: 20.0, fontWeight: FontWeight.bold),
+                                fontSize: 16.0,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: "Lato",
+                              ),
                             ),
                             SizedBox(height: 10.0),
                             Align(
@@ -89,27 +108,27 @@ class _CheckOutViewState extends State<CheckOutView> {
                                 children: [
                                   Icon(
                                     Icons.star_rate_rounded,
-                                    color: Colors.yellow,
+                                    color: starcolor,
                                   ),
                                   // SizedBox(width: 1.0),
                                   Icon(
                                     Icons.star_rate_rounded,
-                                    color: Colors.yellow,
+                                    color: starcolor,
                                   ),
                                   // SizedBox(width: 1.0),
                                   Icon(
                                     Icons.star_rate_rounded,
-                                    color: Colors.yellow,
+                                    color: starcolor,
                                   ),
                                   // SizedBox(width: 1.0),
                                   Icon(
                                     Icons.star_rate_rounded,
-                                    color: Colors.yellow,
+                                    color: starcolor,
                                   ),
                                   // SizedBox(width: 1.0),
                                   Icon(
                                     Icons.star_rate_rounded,
-                                    color: Colors.yellow,
+                                    color: starcolor,
                                   ),
                                   // SizedBox(width: 1.0),
                                 ],
@@ -123,7 +142,8 @@ class _CheckOutViewState extends State<CheckOutView> {
                                   style: TextStyle(
                                       color: Colors.green,
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 25.0),
+                                      fontFamily: "Lato",
+                                      fontSize: 20.0),
                                 ),
                                 SizedBox(width: 7.0),
                                 Text(
@@ -131,23 +151,30 @@ class _CheckOutViewState extends State<CheckOutView> {
                                   style: TextStyle(
                                       color: Colors.grey,
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 25.0,
+                                      fontFamily: "Lato",
+                                      fontSize: 20.0,
                                       decoration: TextDecoration.lineThrough),
                                 ),
                               ],
                             ),
                             Container(
-                              height: 40.0,
+                              height: 30.0,
                               width: 80.0,
                               decoration: BoxDecoration(
-                                  border: Border.all(color: Colors.red),
+                                  border: Border.all(color: appthemecolor),
                                   borderRadius: BorderRadius.circular(10.0),
                                   color: Colors.white),
                               child: Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceEvenly,
                                 children: [
-                                  Text("Qty"),
+                                  Text(
+                                    "Qty",
+                                    style: TextStyle(
+                                      fontSize: 12,
+                                      fontFamily: "Lato",
+                                    ),
+                                  ),
                                   DropdownButton<int>(
                                     value: _selectedQuantity,
                                     onChanged: (value) {
@@ -183,7 +210,10 @@ class _CheckOutViewState extends State<CheckOutView> {
                         Text(
                           "Order Summary",
                           style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 20.0),
+                            fontWeight: FontWeight.bold,
+                            fontSize: 14.0,
+                            fontFamily: "Lato",
+                          ),
                         ),
                         SizedBox(height: 10.0),
                         Row(
@@ -191,9 +221,15 @@ class _CheckOutViewState extends State<CheckOutView> {
                           children: [
                             Text(
                               "Price (1 Item)",
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontFamily: "Lato",
+                              ),
                             ),
                             Text(
                               "₹ 599",
+                              style:
+                                  TextStyle(fontFamily: "Lato", fontSize: 12),
                             ),
                           ],
                         ),
@@ -203,9 +239,13 @@ class _CheckOutViewState extends State<CheckOutView> {
                           children: [
                             Text(
                               "Discount",
+                              style:
+                                  TextStyle(fontFamily: "Lato", fontSize: 12),
                             ),
                             Text(
                               "₹ 0",
+                              style:
+                                  TextStyle(fontFamily: "Lato", fontSize: 12),
                             ),
                           ],
                         ),
@@ -215,9 +255,13 @@ class _CheckOutViewState extends State<CheckOutView> {
                           children: [
                             Text(
                               "Delivery Charges",
+                              style:
+                                  TextStyle(fontFamily: "Lato", fontSize: 12),
                             ),
                             Text(
                               "₹ 0",
+                              style:
+                                  TextStyle(fontFamily: "Lato", fontSize: 12),
                             ),
                           ],
                         ),
@@ -226,9 +270,11 @@ class _CheckOutViewState extends State<CheckOutView> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              "Order Summary",
+                              "Total Amount",
                               style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 20.0),
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14.0,
+                                  fontFamily: "Lato"),
                             ),
                             Row(
                               children: [
@@ -237,7 +283,8 @@ class _CheckOutViewState extends State<CheckOutView> {
                                   style: TextStyle(
                                       color: Colors.green,
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 25.0),
+                                      fontFamily: "Lato",
+                                      fontSize: 20.0),
                                 ),
                                 SizedBox(width: 10.0),
                                 Text(
@@ -245,7 +292,8 @@ class _CheckOutViewState extends State<CheckOutView> {
                                   style: TextStyle(
                                       color: Colors.grey,
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 25.0,
+                                      fontFamily: "Lato",
+                                      fontSize: 20.0,
                                       decoration: TextDecoration.lineThrough),
                                 ),
                               ],
@@ -267,14 +315,17 @@ class _CheckOutViewState extends State<CheckOutView> {
                   child: Center(
                     child: Text(
                       'Buy Now',
-                      style: TextStyle(color: Colors.white, fontSize: 20.0),
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16.0,
+                          fontFamily: "Lato"),
                     ),
                   ),
                 ),
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8.0)),
-                  backgroundColor: Colors.red,
+                  backgroundColor: appthemecolor,
                   padding: EdgeInsets.symmetric(vertical: 15),
                 ),
               ),

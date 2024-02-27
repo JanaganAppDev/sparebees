@@ -1,8 +1,8 @@
 import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:sparebess/views/otp_view.dart';
+import 'package:sparebess/views/login_screens/otp_view.dart';
 
-import '../constants.dart';
+import '../../constants.dart';
 
 class NumberVerificationView extends StatefulWidget {
   NumberVerificationView({super.key});
@@ -45,20 +45,27 @@ class _NumberVerificationViewState extends State<NumberVerificationView> {
                         style: TextStyle(
                           fontWeight: FontWeight.w600,
                           fontSize: 14,
+                          fontFamily: "Lato",
                         ),
                       ),
                     ),
                   ),
-                  Padding(
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 8.0, vertical: 10.0),
-                    child: Text(
-                      "This number will be used for all ride-related communication.",
-                      style: TextStyle(
-                          fontWeight: FontWeight.w400,
-                          fontSize: 14,
-                          color: Colors.grey),
-                    ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 8.0, vertical: 10.0),
+                        child: Text(
+                          "This number will be used for all ride-related\ncommunication.",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontFamily: "Lato",
+                              fontSize: 14,
+                              color: Colors.grey),
+                        ),
+                      ),
+                    ],
                   ),
                   Padding(
                     padding:
@@ -126,9 +133,11 @@ class _NumberVerificationViewState extends State<NumberVerificationView> {
                       child: Text(
                         "Next",
                         style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.white),
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.white,
+                          fontFamily: "Lato",
+                        ),
                       ),
                     ),
                   ),

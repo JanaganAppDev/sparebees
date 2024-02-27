@@ -1,25 +1,23 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sparebess/views/splash_view2.dart';
+import 'package:sparebess/views/welcome_screens/splash_view2.dart';
 
-class SplashViewPage1 extends StatefulWidget {
-  SplashViewPage1({Key? key}) : super(key: key);
+class PaymentStatusView extends StatefulWidget {
+  PaymentStatusView({Key? key}) : super(key: key);
 
   @override
-  _SplashViewPage1State createState() => _SplashViewPage1State();
+  _PaymentStatusViewState createState() => _PaymentStatusViewState();
 }
 
-class _SplashViewPage1State extends State<SplashViewPage1> {
-  @override
+class _PaymentStatusViewState extends State<PaymentStatusView> {
+  /*@override
   void initState() {
     super.initState();
     Timer(Duration(seconds: 2), () {
       Get.to(SplashViewPage2());
-      /*Navigator.push(
-          context, MaterialPageRoute(builder: (context) => SplashViewPage2()));*/
     });
-  }
+  }*/
 
   @override
   Widget build(BuildContext context) {
@@ -30,11 +28,11 @@ class _SplashViewPage1State extends State<SplashViewPage1> {
         height: screenHeight,
         width: screenWidth,
         decoration: BoxDecoration(
-          color: Color(0xffAE0000),
+          color: Colors.white,
         ),
         child: Center(
           child: Image.asset(
-            "lib/images/welcome/splash1.png",
+            "lib/images/paymentImg/paymentstatus.png",
             scale: 1.7,
           ),
         ),

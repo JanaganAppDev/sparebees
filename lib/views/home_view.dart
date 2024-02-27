@@ -1,7 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:sparebess/views/cart_view.dart';
-import 'package:sparebess/views/categoriesbar.dart';
+import 'package:sparebess/views/categories_view.dart';
 import 'package:sparebess/views/profile_view.dart';
 import '../constants.dart';
 import '../widgets/brands.dart';
@@ -20,7 +20,6 @@ class _HomeviewState extends State<Homeview> {
     'lib/images/sider_img1.png',
     'lib/images/sliderimg2.png',
     'lib/images/sliderimg3.png',
-    // Add more image paths as needed
   ];
 
   List<String> navigationbarlist = [
@@ -31,7 +30,7 @@ class _HomeviewState extends State<Homeview> {
   ];
 
   final CarouselController controller = CarouselController();
-  //int currentIndex = 0;
+
   int _currentIndex = 0;
   int selectedIndex = 0;
   getNavigationbarItemWidget(int pos) {
@@ -56,7 +55,7 @@ class _HomeviewState extends State<Homeview> {
     var size = MediaQuery.of(context).size;
     final double itemHeight = (size.height - kToolbarHeight - 250) / 2;
     final double itemWidth = size.width / 2;
-    double screenWidth = MediaQuery.of(context).size.width;
+    double screenwidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
       appBar: AppBar(
@@ -74,7 +73,11 @@ class _HomeviewState extends State<Homeview> {
                 children: [
                   Text(
                     "Hi, Sparebees",
-                    style: AppConstants.headingTextStyle,
+                    style: TextStyle(
+                        fontFamily: "Lato",
+                        fontSize: 16,
+                        color: appthemecolor,
+                        fontWeight: FontWeight.w600),
                     // TextStyle(
                     //     fontSize: 18,
                     //     color: Colors.red[800],
@@ -94,14 +97,12 @@ class _HomeviewState extends State<Homeview> {
       ),
       body: SingleChildScrollView(
         child: Container(
+          color: Colors.white,
           margin: EdgeInsets.all(8),
           child: Column(
             children: [
-              const CarouselSliderDemo(),
-              const Categories(),
-              const SizedBox(
-                height: 10,
-              ),
+              CarouselSliderDemo(),
+              Categories(),
               BrandsView(),
             ],
           ),

@@ -1,9 +1,10 @@
 import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:sparebess/constants.dart';
-import 'package:sparebess/views/number_verification.dart';
+import 'package:sparebess/views/login_screens/number_verification.dart';
+import 'package:sparebess/views/login_screens/register_view.dart';
 
-import 'navigation_view.dart';
+import '../navigation_view.dart';
 
 class LoginView extends StatefulWidget {
   LoginView({super.key});
@@ -27,15 +28,16 @@ class _LoginViewState extends State<LoginView> {
     double screenwidth = MediaQuery.of(context).size.width;
     return Scaffold(
       body: SingleChildScrollView(
-        child: SafeArea(
-          child: Container(
-            margin: EdgeInsets.all(10),
+        child: Container(
+          margin: EdgeInsets.all(10),
+          child: Form(
+            key: _formKey,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Padding(
-                  padding: EdgeInsets.only(top: 60.0, bottom: 15),
+                  padding: EdgeInsets.only(top: 103.0, bottom: 15),
                   child: Center(
                     child: Image.asset("lib/images/welcome/sparebees_logo.png",
                         scale: 1.5),
@@ -44,17 +46,18 @@ class _LoginViewState extends State<LoginView> {
                 Text(
                   "Login to your Account",
                   style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w500,
-                  ),
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "Lato"),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(top: 120.0, bottom: 8, left: 5),
+                  padding: EdgeInsets.only(top: 110.0, bottom: 8, left: 5),
                   child: Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
                       "Login with mobile number",
-                      style: TextStyle(fontWeight: FontWeight.w600),
+                      style: TextStyle(
+                          fontWeight: FontWeight.w600, fontFamily: "Lato"),
                     ),
                   ),
                 ),
@@ -63,6 +66,12 @@ class _LoginViewState extends State<LoginView> {
                   child: TextFormField(
                     controller: phoneNumberController,
                     cursorColor: Colors.grey,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return "Enter your Mobile Number";
+                      }
+                      return null;
+                    },
                     decoration: InputDecoration(
                       contentPadding:
                           EdgeInsets.symmetric(vertical: 15, horizontal: 15),
@@ -102,7 +111,12 @@ class _LoginViewState extends State<LoginView> {
                 Padding(
                   padding: EdgeInsets.all(8.0),
                   child: TextFormField(
-                    //validator: _validatePassword,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return "Enter your Password";
+                      }
+                      return null;
+                    },
                     controller: passwordController,
                     cursorColor: Colors.grey,
                     decoration: InputDecoration(
@@ -156,25 +170,15 @@ class _LoginViewState extends State<LoginView> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) =>
-                                    NumberVerificationView()));
-                        /*print("trues");
-                        if (_formKey.currentState!.validate()) {
-                          */ /*signup(
-                              //country_codeController.text.toString(),
-                              passwordController.text.toString(),
-                              phoneNumberController.text.toString());*/ /*
+                                builder: (context) => BottomBarNavigation()));
+                        /*if (_formKey.currentState!.validate()) {
+                          print("Form is valid");
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => BottomBarNavigation()));
-                        } else {
-                          print("failed");
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => BottomBarNavigation()));
-                        }*/
+                                  builder: (context) =>
+                                      NumberVerificationView()));
+                        } else {}*/
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: appthemecolor,
@@ -189,7 +193,8 @@ class _LoginViewState extends State<LoginView> {
                         style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w600,
-                            color: Colors.white),
+                            color: Colors.white,
+                            fontFamily: "Lato"),
                       ),
                     ),
                   ),
@@ -199,54 +204,62 @@ class _LoginViewState extends State<LoginView> {
                   child: Center(
                     child: Row(
                       children: [
-                        Divider(
-                          height: 2,
-                          thickness: 1,
-                          indent: 5,
-                          endIndent: 0,
-                          color: Colors.grey,
+                        SizedBox(
+                          width: 180,
+                          child: Divider(
+                            height: 10,
+                            thickness: 1,
+                            indent: 15,
+                            endIndent: 8,
+                            color: Colors.grey,
+                          ),
                         ),
-                        Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 170.0),
-                          child: Text("or"),
+                        Text(
+                          "or",
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontFamily: "Lato",
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
-                        Divider(
-                          height: 2,
-                          thickness: 1,
-                          indent: 5,
-                          endIndent: 0,
-                          color: Colors.grey,
+                        SizedBox(
+                          width: 170,
+                          child: Divider(
+                            height: 10,
+                            thickness: 1,
+                            indent: 8,
+                            endIndent: 8,
+                            color: Colors.grey,
+                          ),
                         ),
                       ],
                     ),
                   ),
                 ),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 125.0),
-                  child: Row(
-                    children: [
-                      CircleAvatar(
-                        radius: 30,
-                        backgroundColor: Colors.transparent,
-                        child: Transform.scale(
-                          scale: 0.7,
-                          child: Image.asset(
-                            'lib/images/share/share8.png',
-                          ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    CircleAvatar(
+                      radius: 35,
+                      backgroundColor: Colors.transparent,
+                      child: Transform.scale(
+                        scale: 0.7,
+                        child: Image.asset(
+                          'lib/images/share/share8.png',
                         ),
                       ),
-                      CircleAvatar(
-                        radius: 30,
-                        backgroundColor: Colors.transparent,
-                        child: Transform.scale(
-                          scale: 0.7,
-                          child: Image.asset(
-                            'lib/images/share/share9.png',
-                          ),
+                    ),
+                    CircleAvatar(
+                      radius: 35,
+                      backgroundColor: Colors.transparent,
+                      child: Transform.scale(
+                        scale: 0.7,
+                        child: Image.asset(
+                          'lib/images/share/share9.png',
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
                 Center(
                   child: Row(
@@ -255,89 +268,92 @@ class _LoginViewState extends State<LoginView> {
                       Text(
                         "Don't have an account?",
                         style: TextStyle(
-                          fontSize: 14.0,
-                          color: Colors.black,
-                          fontWeight: FontWeight.w600,
-                        ),
+                            fontSize: 14.0,
+                            color: Colors.black,
+                            fontWeight: FontWeight.w600,
+                            fontFamily: "Lato"),
                       ),
                       TextButton(
                         onPressed: () {
-                          /* Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => LoginPage()));*/
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => RegisterView()));
                         },
                         child: Text(
                           "Sign up",
                           style: TextStyle(
-                            color: appthemecolor,
-                          ),
+                              color: appthemecolor, fontFamily: "Lato"),
                         ),
                       ),
                     ],
                   ),
                 ),
-                Padding(
-                  padding: EdgeInsets.only(left: 30.0, top: 30),
+                Center(
                   child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
                             "By entering your number.you're agreeing to our ",
                             style: TextStyle(
-                              fontSize: 12.0,
-                              color: Colors.black,
-                              fontWeight: FontWeight.w400,
-                            ),
+                                fontSize: 12.0,
+                                color: Colors.black,
+                                fontWeight: FontWeight.w400,
+                                fontFamily: "Lato"),
                           ),
                           Text(
                             "Terms of",
+                            style: TextStyle(
+                                fontSize: 12,
+                                color: appthemecolor,
+                                decoration: TextDecoration.underline,
+                                decorationColor: appthemecolor,
+                                fontFamily: "Lato"),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            "Services",
+                            style: TextStyle(
+                                fontSize: 12,
+                                color: appthemecolor,
+                                decoration: TextDecoration.underline,
+                                decorationColor: appthemecolor,
+                                fontFamily: "Lato"),
+                          ),
+                          Text(
+                            "and",
+                            style: TextStyle(
+                              fontSize: 12,
+                              color: Colors.black,
+                              fontFamily: "Lato",
+                            ),
+                          ),
+                          Text(
+                            "Privacy policy",
                             style: TextStyle(
                               fontSize: 12,
                               color: appthemecolor,
                               decoration: TextDecoration.underline,
                               decorationColor: appthemecolor,
+                              fontFamily: "Lato",
+                            ),
+                          ),
+                          Text(
+                            "Thanks!",
+                            style: TextStyle(
+                              fontSize: 12,
+                              color: Colors.black,
+                              fontFamily: "Lato",
                             ),
                           ),
                         ],
-                      ),
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 50.0),
-                        child: Row(
-                          children: [
-                            Text(
-                              "Services",
-                              style: TextStyle(
-                                fontSize: 12,
-                                color: appthemecolor,
-                                decoration: TextDecoration.underline,
-                                decorationColor: appthemecolor,
-                              ),
-                            ),
-                            Text(
-                              "and",
-                              style: TextStyle(
-                                fontSize: 12,
-                                color: Colors.black,
-                              ),
-                            ),
-                            Text(
-                              "Privacy policy",
-                              style: TextStyle(
-                                fontSize: 12,
-                                color: appthemecolor,
-                                decoration: TextDecoration.underline,
-                                decorationColor: appthemecolor,
-                              ),
-                            ),
-                            Text(
-                              "Thanks!",
-                              style: TextStyle(
-                                fontSize: 12,
-                                color: Colors.black,
-                              ),
-                            ),
-                          ],
-                        ),
                       ),
                     ],
                   ),

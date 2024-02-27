@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:sparebess/constants.dart';
 import 'package:sparebess/views/profile_view.dart';
 
@@ -47,12 +49,14 @@ class _ManageAddressState extends State<ManageAddress> {
                   Text(
                     "Select Address",
                     style: TextStyle(
-                        fontWeight: FontWeight.bold, color: Colors.black),
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                        fontFamily: "Lato"),
                   ),
                 ],
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 12.0),
+                padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 10),
                 child: Container(
                   width: double.infinity,
                   height: 50,
@@ -71,11 +75,12 @@ class _ManageAddressState extends State<ManageAddress> {
                       ),
                     ),
                     child: Text(
-                      "Add new address",
+                      "Add New Address",
                       style: TextStyle(
                           fontWeight: FontWeight.w600,
-                          fontSize: 20.0,
-                          color: Colors.black),
+                          fontSize: 18.0,
+                          color: Colors.black,
+                          fontFamily: "Lato"),
                     ),
                   ),
                 ),
@@ -88,86 +93,116 @@ class _ManageAddressState extends State<ManageAddress> {
                     return RadioListTile(
                       title: Container(
                         margin: EdgeInsets.all(0.0),
-                        height: 88.0,
+                        height: 115.0,
                         width: 40.0,
                         child: Column(
                           children: [
+                            Align(
+                              alignment: Alignment.centerLeft,
+                              child: Text(
+                                " Home",
+                                style: TextStyle(
+                                    fontSize: 16.0,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black,
+                                    fontFamily: "Lato"),
+                              ),
+                            ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Padding(
-                                  padding: EdgeInsets.only(bottom: 15.0),
-                                  child: Text(
-                                    " Home",
-                                    style: TextStyle(
-                                        fontSize: 16.0,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.grey),
-                                  ),
+                                Row(
+                                  children: [
+                                    Text(
+                                      'No:6',
+                                      style: TextStyle(
+                                          fontSize: 12.0,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.black,
+                                          fontFamily: "Lato"),
+                                    ),
+                                    Text(
+                                      ",",
+                                      style: TextStyle(
+                                          fontSize: 12.0,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.black,
+                                          fontFamily: "Lato"),
+                                    ),
+                                    Text(
+                                      'Raja Nagar',
+                                      style: TextStyle(
+                                          fontSize: 12.0,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.black,
+                                          fontFamily: "Lato"),
+                                    ),
+                                    Text(
+                                      ",",
+                                      style: TextStyle(
+                                          fontSize: 12.0,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.black,
+                                          fontFamily: "Lato"),
+                                    ),
+                                    Text(
+                                      '6th Cross',
+                                      style: TextStyle(
+                                          fontSize: 12.0,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.black,
+                                          fontFamily: "Lato"),
+                                    ),
+                                    Text(
+                                      ",",
+                                      style: TextStyle(
+                                          fontSize: 12.0,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.black,
+                                          fontFamily: "Lato"),
+                                    ),
+                                  ],
                                 ),
                                 GestureDetector(
-                                  /*onTap: () {
-                                    print(addressList[index]);
-                                    print("addressList[index]['flat']");
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => MyAddressPage(addDetails:addressList[index])),
-                                    );
-                                    print('Container tapped!');
-                                  },*/
+                                  onTap: () {},
                                   child: Container(
-                                    /*decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      border: Border.all(
-                                        color: Colors.red,
-                                        width: 01.0,
-                                      ),
-                                    ),*/
-                                    child: Icon(Icons.delete_forever,
-                                        color: Colors.red, size: 22.0),
+                                    child: Icon(Icons.delete_forever_outlined,
+                                        color: appthemecolor, size: 22.0),
                                     width: 30.0,
                                     height: 30.0,
                                   ),
                                 ),
                               ],
                             ),
-                            Row(
-                              children: [
-                                Text(
-                                  'flat',
-                                ),
-                                Text(","),
-                                Text(
-                                  'address',
-                                ),
-                                Text(","),
-                                Text(
-                                  'district',
-                                ),
-                                Text(","),
-                                Text(
-                                  'state',
-                                ),
-                                Text(","),
-                                Text(
-                                  'landmark',
-                                ),
-                                Text(","),
-                                Text(
-                                  'pincode',
-                                ),
-                              ],
+                            Align(
+                              alignment: Alignment.centerLeft,
+                              child: Text(
+                                'Pondicheery',
+                                style: TextStyle(
+                                    fontSize: 12.0,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black,
+                                    fontFamily: "Lato"),
+                              ),
+                            ),
+                            Align(
+                              alignment: Alignment.centerLeft,
+                              child: Text(
+                                '605110.',
+                                style: TextStyle(
+                                    fontSize: 12.0,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black,
+                                    fontFamily: "Lato"),
+                              ),
                             ),
                             Divider(
                               height: 20,
-
-                              ///30
                               thickness: 1,
                               indent: 0,
                               endIndent: 0,
                               color: Colors.grey,
-                            )
+                            ),
                           ],
                         ),
                       ),
@@ -178,19 +213,16 @@ class _ManageAddressState extends State<ManageAddress> {
                           groupValue = value as String;
                         });
                       },
-                      activeColor: Colors.red,
+                      activeColor: appthemecolor,
                       dense: true,
                     );
                   },
                 ),
               ),
-              /*Center(
-                child: CircularProgressIndicator(),
-              ),*/
               Container(
                 //margin: EdgeInsets.only(top: 60.0),
-                width: 350.0,
-                height: 45.0,
+                width: double.infinity,
+                height: 50.0,
                 child: ElevatedButton(
                   onPressed: () {},
                   /*{
@@ -198,15 +230,18 @@ class _ManageAddressState extends State<ManageAddress> {
                         MaterialPageRoute(builder: (context) => MyAddressPage()));
                   },*/
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.red,
+                    backgroundColor: appthemecolor,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10.0),
                     ),
                   ),
                   child: Text(
-                    "Add another address",
-                    style:
-                        TextStyle(fontWeight: FontWeight.w600, fontSize: 22.0),
+                    "Save Changes",
+                    style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 18.0,
+                        color: Colors.white,
+                        fontFamily: "Lato"),
                   ),
                 ),
               ),

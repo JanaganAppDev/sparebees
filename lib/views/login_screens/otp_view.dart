@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sparebess/constants.dart';
-import 'package:sparebess/views/register_view.dart';
+import 'package:sparebess/views/login_screens/login_view.dart';
+import 'package:sparebess/views/login_screens/register_view.dart';
 
 class OtpView extends StatefulWidget {
   OtpView({Key? key}) : super(key: key);
@@ -21,7 +22,7 @@ class _OtpViewState extends State<OtpView> {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Container(
-            margin: EdgeInsets.all(12.0),
+            margin: EdgeInsets.all(15.0),
             child: Column(
               children: [
                 Padding(
@@ -34,10 +35,10 @@ class _OtpViewState extends State<OtpView> {
                   child: Text(
                     "Please wait. We will auto verify the",
                     style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
-                    ),
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                        fontFamily: "Lato"),
                     textAlign: TextAlign.center,
                   ),
                 ),
@@ -46,10 +47,10 @@ class _OtpViewState extends State<OtpView> {
                   child: Text(
                     "OTP sent to +91 98765 43210",
                     style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
-                    ),
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                        fontFamily: "Lato"),
                     textAlign: TextAlign.center,
                   ),
                 ),
@@ -77,7 +78,7 @@ class _OtpViewState extends State<OtpView> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => RegisterView()));
+                                builder: (context) => LoginView()));
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: appthemecolor,
@@ -92,7 +93,8 @@ class _OtpViewState extends State<OtpView> {
                         style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w600,
-                            color: Colors.white),
+                            color: Colors.white,
+                            fontFamily: "Lato"),
                       ),
                     ),
                   ),
@@ -108,16 +110,8 @@ class _OtpViewState extends State<OtpView> {
   Widget _textFieldOTP({bool? first, last}) {
     return Container(
       height: 60,
-      decoration: BoxDecoration(
-          /* boxShadow: [
-          BoxShadow(
-            color: Colors.grey,
-            blurRadius: 0.01,
-            spreadRadius: 0.01,
-            offset: Offset(0, 0),
-          ),
-        ],*/
-          ),
+      width: 40,
+      decoration: BoxDecoration(),
       child: AspectRatio(
         aspectRatio: 1.0,
         child: TextField(
@@ -133,17 +127,23 @@ class _OtpViewState extends State<OtpView> {
           showCursor: false,
           readOnly: false,
           textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
           keyboardType: TextInputType.number,
           maxLength: 1,
           decoration: InputDecoration(
             counter: Offstage(),
-            enabledBorder: OutlineInputBorder(
+            enabledBorder: UnderlineInputBorder(
+              borderSide: BorderSide(color: OtpBox),
+            ),
+            focusedBorder: UnderlineInputBorder(
+              borderSide: BorderSide(color: appthemecolor),
+            ),
+            /*enabledBorder: OutlineInputBorder(
                 borderSide: BorderSide(width: 2, color: OtpBox),
                 borderRadius: BorderRadius.circular(12)),
             focusedBorder: OutlineInputBorder(
                 borderSide: BorderSide(width: 2, color: OtpBox),
-                borderRadius: BorderRadius.circular(12)),
+                borderRadius: BorderRadius.circular(12)),*/
           ),
         ),
       ),

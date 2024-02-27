@@ -4,6 +4,8 @@ import 'package:sparebess/views/home_view.dart';
 import 'package:sparebess/views/profile_view.dart';
 
 import '../constants.dart';
+import '../widgets/brands.dart';
+import 'navigation_view.dart';
 
 class CatergoriesBar extends StatefulWidget {
   const CatergoriesBar({Key? key}) : super(key: key);
@@ -13,7 +15,7 @@ class CatergoriesBar extends StatefulWidget {
 }
 
 class _CatergoriesBarState extends State<CatergoriesBar> {
-  int selectedIndex = 1; // Set the appropriate index for Categories page
+  int selectedIndex = 1;
 
   final List<String> categoryNames = [
     "Tyers",
@@ -28,7 +30,6 @@ class _CatergoriesBarState extends State<CatergoriesBar> {
     "Lights",
     "Accessories",
     "Plug"
-    // Add more category names as needed
   ];
 
   @override
@@ -38,60 +39,74 @@ class _CatergoriesBarState extends State<CatergoriesBar> {
         leading: IconButton(
           icon: Icon(Icons.chevron_left),
           onPressed: () {
-            Navigator.pop(context);
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => BottomBarNavigation()));
           },
         ),
         centerTitle: true,
-        title: Text('All Categories', style: TextStyle(color: appthemecolor)),
+        title: Text(
+          'All Categories',
+          style: TextStyle(
+            fontFamily: "Lato",
+            fontSize: 16,
+            color: appthemecolor,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
       ),
       body: Container(
-        margin: EdgeInsets.all(10),
+        color: Colors.white,
+        margin: EdgeInsets.all(8),
         child: GridView.builder(
           physics: NeverScrollableScrollPhysics(),
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 4,
-            crossAxisSpacing: 8.0,
+            crossAxisSpacing: 4.0,
             mainAxisSpacing: 10,
           ),
           itemCount: categoryNames.length,
           itemBuilder: (context, index) {
             return Container(
+              //height: 90,
               decoration: BoxDecoration(
-                shape: BoxShape.circle,
-              ),
+                  //shape: BoxShape.circle,
+                  ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                    height: 59,
+                    height: 70,
                     //width: 100,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.grey,
-                          blurRadius: 4,
-                          spreadRadius: 2,
+                          color: Bordercolor,
+                          blurRadius: 2,
+                          spreadRadius: 0.5,
                           offset: Offset(0, 0),
                         ),
                       ],
                     ),
                     child: CircleAvatar(
                       backgroundColor: Colors.white,
-                      radius: 50,
+                      radius: 70,
                       child: Transform.scale(
-                        scale: 0.6,
+                        scale: 0.7,
                         child: Image.asset(
                           'lib/images/categories/categories${index + 1}.png',
                         ),
                       ),
                     ),
                   ),
-                  SizedBox(height: 8.0),
                   Text(
                     categoryNames[index],
                     textAlign: TextAlign.center,
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "Lato",
+                      fontSize: 13,
+                    ),
                   ),
                 ],
               ),

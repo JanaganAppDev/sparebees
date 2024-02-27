@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sparebess/views/categoriesbar.dart';
+import 'package:sparebess/views/categories_view.dart';
 import 'package:sparebess/views/home_view.dart';
 import 'package:sparebess/views/profile_view.dart';
 
@@ -30,7 +30,7 @@ class _CartViewPageState extends State<CartViewPage> {
             Navigator.pop(context);
           },
         ),
-        title: Text('Cart View'),
+        title: Text('Cart View', style: TextStyle(fontFamily: "Lato")),
       ),
       body: ListView.builder(
         itemCount: cartItems.length,

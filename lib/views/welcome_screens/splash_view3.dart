@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:sparebess/views/splash_view1.dart';
-import 'package:sparebess/views/splash_view2.dart';
-import 'package:sparebess/views/splash_view4.dart';
+import 'package:sparebess/constants.dart';
+import 'package:sparebess/views/welcome_screens/splash_view1.dart';
+import 'package:sparebess/views/welcome_screens/splash_view2.dart';
+import 'package:sparebess/views/welcome_screens/splash_view4.dart';
 
 class SplashViewPage3 extends StatefulWidget {
   SplashViewPage3({super.key});
@@ -87,7 +88,7 @@ class _SplashViewPage3State extends State<SplashViewPage3> {
                   onPressed: () {},
                   child: Text(
                     "Skip",
-                    style: TextStyle(color: Colors.grey),
+                    style: TextStyle(color: Colors.grey, fontFamily: "Lato"),
                   ),
                 ),
                 TextButton(
@@ -100,7 +101,7 @@ class _SplashViewPage3State extends State<SplashViewPage3> {
                   },
                   child: Text(
                     "Go",
-                    style: TextStyle(color: Color(0xffAE0000)),
+                    style: TextStyle(color: appthemecolor, fontFamily: "Lato"),
                   ),
                 )
               ],

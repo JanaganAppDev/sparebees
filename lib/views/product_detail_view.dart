@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:sparebess/views/checkout_view.dart';
 import 'package:sparebess/views/ourProduct_view.dart';
 import '../constants.dart';
 import 'navigation_view.dart';
@@ -61,19 +62,19 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
               Text(
                 "Rs.599",
                 style: TextStyle(
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.green,
-                ),
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.green,
+                    fontFamily: "Lato"),
               ),
               Text(
                 "Rs.799",
                 style: TextStyle(
-                  fontSize: 20.0,
-                  color: Colors.grey,
-                  fontWeight: FontWeight.bold,
-                  decoration: TextDecoration.lineThrough,
-                ),
+                    fontSize: 20.0,
+                    color: Colors.grey,
+                    fontWeight: FontWeight.bold,
+                    decoration: TextDecoration.lineThrough,
+                    fontFamily: "Lato"),
               ),
               Container(
                 width: 140.0,
@@ -101,9 +102,9 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
                   child: Text(
                     "Buy Now",
                     style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 12.0,
-                    ),
+                        color: Colors.white,
+                        fontSize: 12.0,
+                        fontFamily: "Lato"),
                   ),
                 ),
               ),
@@ -126,7 +127,9 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
                     Text(
                       "Apollo ACTIGRIP R",
                       style: TextStyle(
-                          fontSize: 20.0, fontWeight: FontWeight.bold),
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: "Lato"),
                     ),
                     IconButton(
                         onPressed: () {}, icon: Icon(Icons.share_outlined))
@@ -136,13 +139,15 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
                   padding: EdgeInsets.only(top: 15.0),
                   child: Row(
                     children: [
-                      Text("4.8"),
+                      Text(
+                        "4.8",
+                        style: TextStyle(fontFamily: "Lato"),
+                      ),
                       Icon(Icons.star, color: Colors.yellow),
                       Text(
                         "(284 ratings)",
-                        style: TextStyle(
-                          color: Colors.grey,
-                        ),
+                        style:
+                            TextStyle(color: Colors.grey, fontFamily: "Lato"),
                       )
                     ],
                   ),
@@ -152,20 +157,25 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
                   child: Row(
                     children: [
                       Text(
-                        "Rs. 500",
+                        "Rs. 599",
                         style: TextStyle(
                             color: Colors.green,
                             fontWeight: FontWeight.bold,
-                            fontSize: 30.0),
+                            fontFamily: "Lato",
+                            fontSize: 20.0),
                       ),
                       SizedBox(width: 10.0),
                       Text(
                         "Rs. 799",
                         style: TextStyle(
-                            color: Colors.grey,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 30.0,
-                            decoration: TextDecoration.lineThrough),
+                          color: Colors.grey,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20.0,
+                          fontFamily: "Lato",
+                          decoration: TextDecoration.lineThrough,
+                          decorationColor: Colors.grey,
+                          decorationThickness: 1.0,
+                        ),
                       )
                     ],
                   ),
@@ -173,7 +183,9 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
                 Padding(
                   padding: EdgeInsets.only(top: 15.0),
                   child: Text(
-                      "Disc brakes, a vital automotive safety component, utilize friction between brake pads and a rotating disc to swiftly and effectively halt vehicle motion, offering superior stopping power and heat dissipation."),
+                    "Disc brakes, a vital automotive safety component, utilize friction between brake pads and a rotating disc to swiftly and effectively halt vehicle motion, offering superior stopping power and heat dissipation.",
+                    style: TextStyle(fontFamily: "Lato"),
+                  ),
                 ),
                 Padding(
                   padding: EdgeInsets.only(top: 15.0),
@@ -182,12 +194,15 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
                     children: [
                       Text("Description",
                           style: TextStyle(
-                              fontSize: 20.0, fontWeight: FontWeight.bold)),
+                              fontSize: 20.0,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: "Lato")),
                       TextButton(
                         onPressed: () {},
                         child: Text(
                           "View all",
-                          style: TextStyle(color: Colors.grey),
+                          style:
+                              TextStyle(color: Colors.grey, fontFamily: "Lato"),
                         ),
                       )
                     ],
@@ -197,14 +212,10 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
                   padding: EdgeInsets.only(top: 10.0),
                   child: Align(
                     alignment: Alignment.centerLeft,
-                    child: Text("Tubeless Rear Tyre"),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(top: 10.0),
-                  child: Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text("Item Weight: 5000 kg"),
+                    child: Text(
+                      "Tubeless Rear Tyre",
+                      style: TextStyle(fontFamily: "Lato"),
+                    ),
                   ),
                 ),
                 Padding(
@@ -212,7 +223,19 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
                   child: Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
-                        "Home installation available on selected products and selected cities."),
+                      "Item Weight: 5000 kg",
+                      style: TextStyle(fontFamily: "Lato"),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(top: 10.0),
+                  child: Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      "Home installation available on selected products and selected cities.",
+                      style: TextStyle(fontFamily: "Lato"),
+                    ),
                   ),
                 ),
                 Padding(
@@ -221,7 +244,8 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
                     children: [
                       Text(
                         "Share with:",
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontFamily: "Lato"),
                       ),
                       Container(
                         height: 55,
@@ -310,100 +334,111 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
                     ),
                     itemCount: 4, // Set the number of items to 6
                     itemBuilder: (BuildContext context, int index) {
-                      return Container(
-                        margin: EdgeInsets.all(8.0),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(10.0),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey,
-                              blurRadius: 2.0,
-                              offset: Offset(0, 2),
-                            ),
-                          ],
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Align(
-                              alignment: Alignment.centerRight,
-                              child: IconButton(
-                                onPressed: () {},
-                                icon: Icon(Icons.favorite_border_outlined),
+                      return GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => CheckOutView()));
+                        },
+                        child: Container(
+                          margin: EdgeInsets.all(8.0),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10.0),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey,
+                                blurRadius: 2.0,
+                                offset: Offset(0, 2),
                               ),
-                            ),
-                            Center(
-                              child: Image.asset(
-                                'lib/images/categories/categories${index + 1}.png',
-                                height: 70.0,
-                                width: 130.0,
-                                alignment: Alignment.center,
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(left: 10.0),
-                              child: Text(
-                                "Bybre Brakes",
-                                style: TextStyle(
-                                  fontSize: 15.0,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black,
+                            ],
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Align(
+                                alignment: Alignment.centerRight,
+                                child: IconButton(
+                                  onPressed: () {},
+                                  icon: Icon(Icons.favorite_border_outlined),
                                 ),
                               ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 8.0),
-                              child: Row(
-                                children: [
-                                  Text(
-                                    "4.8",
-                                    style: TextStyle(
-                                      color: Colors.grey[700],
-                                    ),
-                                  ),
-                                  Icon(
-                                    Icons.star,
-                                    color: Colors.yellow,
-                                    size: 20,
-                                  ),
-                                  Text(
-                                    "(248 Ratings)",
-                                    style: TextStyle(
-                                      color: Colors.grey[500],
-                                    ),
-                                  ),
-                                ],
+                              Center(
+                                child: Image.asset(
+                                  'lib/images/categories/categories${index + 1}.png',
+                                  height: 70.0,
+                                  width: 130.0,
+                                  alignment: Alignment.center,
+                                ),
                               ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.all(2.0),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(
-                                    "Rs.599",
-                                    style: TextStyle(
+                              Padding(
+                                padding: EdgeInsets.only(left: 10.0),
+                                child: Text(
+                                  "Bybre Brakes",
+                                  style: TextStyle(
                                       fontSize: 15.0,
                                       fontWeight: FontWeight.bold,
-                                      color: Colors.green,
-                                    ),
-                                  ),
-                                  Text(
-                                    "Rs.699",
-                                    style: TextStyle(
-                                      fontSize: 15.0,
-                                      color: Colors.grey,
-                                      fontWeight: FontWeight.bold,
-                                      decoration: TextDecoration.lineThrough,
-                                    ),
-                                  ),
-                                ],
+                                      color: Colors.black,
+                                      fontFamily: "Lato"),
+                                ),
                               ),
-                            ),
-                          ],
+                              Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 8.0),
+                                child: Row(
+                                  children: [
+                                    Text(
+                                      "4.8",
+                                      style: TextStyle(
+                                          color: Colors.grey[700],
+                                          fontFamily: "Lato"),
+                                    ),
+                                    Icon(
+                                      Icons.star,
+                                      color: Colors.yellow,
+                                      size: 20,
+                                    ),
+                                    Text(
+                                      "(248 Ratings)",
+                                      style: TextStyle(
+                                          color: Colors.grey[500],
+                                          fontFamily: "Lato"),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.all(2.0),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      "Rs.599",
+                                      style: TextStyle(
+                                          fontSize: 15.0,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.green,
+                                          fontFamily: "Lato"),
+                                    ),
+                                    Text(
+                                      "Rs.699",
+                                      style: TextStyle(
+                                          fontSize: 15.0,
+                                          color: Colors.grey,
+                                          fontWeight: FontWeight.bold,
+                                          decoration:
+                                              TextDecoration.lineThrough,
+                                          decorationColor: Colors.grey,
+                                          decorationThickness: 1.0,
+                                          fontFamily: "Lato"),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       );
                     },
@@ -415,8 +450,10 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
                     alignment: Alignment.centerLeft,
                     child: Text(
                       "Customer Ratings",
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: "Lato"),
                     ),
                   ),
                 ),
@@ -446,7 +483,10 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
                       Padding(
                         padding: EdgeInsets.symmetric(
                             vertical: 20.0, horizontal: 10.0),
-                        child: Text("(284 Ratings)"),
+                        child: Text(
+                          "(284 Ratings)",
+                          style: TextStyle(fontFamily: "Lato"),
+                        ),
                       ),
                     ],
                   ),
@@ -455,13 +495,18 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
                   alignment: Alignment.centerLeft,
                   child: Text(
                     "Customer Reviews",
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: "Lato"),
                   ),
                 ),
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 20.0),
                   child: Text(
-                      "Customers like the cornering, stability, appearance, quality and value of the vehicle tire. They mention that it has a great design, it's awesome and that it provides good grip on the road. Some are also happy with the fit, and grip."),
+                    "Customers like the cornering, stability, appearance, quality and value of the vehicle tire. They mention that it has a great design, it's awesome and that it provides good grip on the road. Some are also happy with the fit, and grip.",
+                    style: TextStyle(fontFamily: "Lato"),
+                  ),
                 ),
                 Column(
                   children: [
@@ -483,7 +528,10 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
                                   color: Color(0xff006E39),
                                 ),
                                 SizedBox(width: 5.0),
-                                Text("Quality"),
+                                Text(
+                                  "Quality",
+                                  style: TextStyle(fontFamily: "Lato"),
+                                ),
                               ],
                             ),
                           ),
@@ -503,7 +551,10 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
                                   color: Color(0xff006E39),
                                 ),
                                 SizedBox(width: 5.0),
-                                Text("Grip"),
+                                Text(
+                                  "Grip",
+                                  style: TextStyle(fontFamily: "Lato"),
+                                ),
                               ],
                             ),
                           ),
@@ -523,7 +574,10 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
                                   color: Color(0xff006E39),
                                 ),
                                 SizedBox(width: 5.0),
-                                Text("Value"),
+                                Text(
+                                  "Value",
+                                  style: TextStyle(fontFamily: "Lato"),
+                                ),
                               ],
                             ),
                           ),
@@ -547,7 +601,10 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
                                   color: Color(0xff006E39),
                                 ),
                                 SizedBox(width: 5.0),
-                                Text("Fit"),
+                                Text(
+                                  "Fit",
+                                  style: TextStyle(fontFamily: "Lato"),
+                                ),
                               ],
                             ),
                           ),
@@ -567,7 +624,10 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
                                   color: Color(0xff006E39),
                                 ),
                                 SizedBox(width: 5.0),
-                                Text("Design"),
+                                Text(
+                                  "Design",
+                                  style: TextStyle(fontFamily: "Lato"),
+                                ),
                               ],
                             ),
                           ),
@@ -587,7 +647,10 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
                                   color: Color(0xff006E39),
                                 ),
                                 SizedBox(width: 5.0),
-                                Text("Cornering"),
+                                Text(
+                                  "Cornering",
+                                  style: TextStyle(fontFamily: "Lato"),
+                                ),
                               ],
                             ),
                           ),
@@ -608,7 +671,9 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
                         Text(
                           "Sri",
                           style: TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.w500),
+                              fontSize: 18,
+                              fontWeight: FontWeight.w500,
+                              fontFamily: "Lato"),
                         ),
                       ],
                     ),
@@ -642,7 +707,9 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
                         child: Text(
                           "Uniqueness of steel sadial tyre",
                           style: TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.w500),
+                              fontSize: 18,
+                              fontWeight: FontWeight.w500,
+                              fontFamily: "Lato"),
                         ),
                       ),
                     ),
@@ -650,7 +717,10 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
                       children: [
                         Padding(
                           padding: EdgeInsets.symmetric(vertical: 10.0),
-                          child: Text("Reviewed on January 30.01.2024"),
+                          child: Text(
+                            "Reviewed on January 30.01.2024",
+                            style: TextStyle(fontFamily: "Lato"),
+                          ),
                         ),
                       ],
                     ),
@@ -658,7 +728,10 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
                       children: [
                         Padding(
                           padding: EdgeInsets.symmetric(vertical: 2.0),
-                          child: Text("Great design"),
+                          child: Text(
+                            "Great design",
+                            style: TextStyle(fontFamily: "Lato"),
+                          ),
                         ),
                       ],
                     ),
@@ -666,7 +739,10 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
                       children: [
                         Padding(
                           padding: EdgeInsets.symmetric(vertical: 2.0),
-                          child: Text("Great looks"),
+                          child: Text(
+                            "Great looks",
+                            style: TextStyle(fontFamily: "Lato"),
+                          ),
                         ),
                       ],
                     ),
@@ -688,9 +764,9 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
                             child: Text(
                               "Helpful",
                               style: TextStyle(
-                                fontSize: 13.0,
-                                color: Colors.black,
-                              ),
+                                  fontSize: 13.0,
+                                  color: Colors.black,
+                                  fontFamily: "Lato"),
                             ),
                           ),
                         ),
@@ -712,7 +788,9 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
                           Text(
                             "Sri",
                             style: TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.w500),
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500,
+                                fontFamily: "Lato"),
                           ),
                         ],
                       ),
@@ -746,7 +824,9 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
                           child: Text(
                             "Uniqueness of steel sadial tyre",
                             style: TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.w500),
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500,
+                                fontFamily: "Lato"),
                           ),
                         ),
                       ),
@@ -754,7 +834,10 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
                         children: [
                           Padding(
                             padding: EdgeInsets.symmetric(vertical: 10.0),
-                            child: Text("Reviewed on January 30.01.2024"),
+                            child: Text(
+                              "Reviewed on January 30.01.2024",
+                              style: TextStyle(fontFamily: "Lato"),
+                            ),
                           ),
                         ],
                       ),
@@ -762,7 +845,10 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
                         children: [
                           Padding(
                             padding: EdgeInsets.symmetric(vertical: 2.0),
-                            child: Text("Great design"),
+                            child: Text(
+                              "Great design",
+                              style: TextStyle(fontFamily: "Lato"),
+                            ),
                           ),
                         ],
                       ),
@@ -770,7 +856,10 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
                         children: [
                           Padding(
                             padding: EdgeInsets.symmetric(vertical: 2.0),
-                            child: Text("Great looks"),
+                            child: Text(
+                              "Great looks",
+                              style: TextStyle(fontFamily: "Lato"),
+                            ),
                           ),
                         ],
                       ),
@@ -792,9 +881,9 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
                               child: Text(
                                 "Helpful",
                                 style: TextStyle(
-                                  fontSize: 13.0,
-                                  color: Colors.black,
-                                ),
+                                    fontSize: 13.0,
+                                    color: Colors.black,
+                                    fontFamily: "Lato"),
                               ),
                             ),
                           ),

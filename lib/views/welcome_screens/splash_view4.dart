@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:sparebess/views/login_view.dart';
-import 'package:sparebess/views/splash_view1.dart';
-import 'package:sparebess/views/splash_view3.dart';
+import 'package:sparebess/views/login_screens/login_view.dart';
+import 'package:sparebess/views/welcome_screens/splash_view1.dart';
+import 'package:sparebess/views/welcome_screens/splash_view3.dart';
 
-import '../constants.dart';
+import '../../constants.dart';
 
 class SplashViewPage4 extends StatefulWidget {
   SplashViewPage4({super.key});
@@ -107,7 +107,8 @@ class _SplashViewPage4State extends State<SplashViewPage4> {
                   style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w600,
-                      color: Colors.white),
+                      color: Colors.white,
+                      fontFamily: "Lato"),
                 ),
               ),
             ),

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sparebess/constants.dart';
 import 'package:sparebess/views/cart_view.dart';
-import 'package:sparebess/views/categoriesbar.dart';
+import 'package:sparebess/views/categories_view.dart';
+import 'package:sparebess/views/checkout_view.dart';
 import 'package:sparebess/views/home_view.dart';
 import 'package:sparebess/views/profile_view.dart';
 
@@ -31,7 +32,7 @@ class _BottomBarNavigationState extends State<BottomBarNavigation> {
       case 2:
         return Profileview();
       case 3:
-        return CartViewPage();
+        return CheckOutView();
       default:
         return Text("Error");
     }

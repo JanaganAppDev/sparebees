@@ -15,7 +15,6 @@ class _CarouselSliderDemoState extends State<CarouselSliderDemo> {
     'lib/images/sider_img1.png',
     'lib/images/sliderimg2.png',
     'lib/images/sliderimg3.png',
-    // Add more image paths as needed
   ];
 
   final CarouselController controller = CarouselController();
@@ -27,12 +26,14 @@ class _CarouselSliderDemoState extends State<CarouselSliderDemo> {
     return Column(
       children: [
         Padding(
-          padding: EdgeInsets.symmetric(vertical: 2.0, horizontal: 4),
+          padding: EdgeInsets.symmetric(vertical: 4.0, horizontal: 4),
           child: Container(
             height: 52,
             width: screenWidth,
             child: TextFormField(
               decoration: InputDecoration(
+                contentPadding:
+                    EdgeInsets.symmetric(vertical: 15.0, horizontal: 15.0),
                 hintText: "Search",
                 filled: true,
                 fillColor: Color(0xFFEBEBEB),
@@ -65,7 +66,7 @@ class _CarouselSliderDemoState extends State<CarouselSliderDemo> {
           ),
         ),
         Container(
-          height: 200.0,
+          height: 150.0,
           child: CarouselSlider(
             carouselController: controller,
             options: CarouselOptions(

@@ -7,6 +7,8 @@ class BrandsView extends StatefulWidget {
   State<BrandsView> createState() => _BrandsViewState();
 }
 
+Color Bordercolor = Color(0xFFEBEBEB);
+
 class _BrandsViewState extends State<BrandsView> {
   // Sample list of brand names
   final List<String> brandsList = [
@@ -41,7 +43,10 @@ class _BrandsViewState extends State<BrandsView> {
             alignment: Alignment.centerLeft,
             child: Text(
               "Top Clearance Sale",
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: "Lato"),
             ),
           ),
         ),
@@ -55,7 +60,7 @@ class _BrandsViewState extends State<BrandsView> {
               mainAxisSpacing: 10,
               crossAxisCount: 2,
             ),
-            itemCount: 2, // Set the number of items to 6
+            itemCount: 2,
             itemBuilder: (BuildContext context, int index) {
               return Container(
                 margin: EdgeInsets.all(8.0),
@@ -94,10 +99,10 @@ class _BrandsViewState extends State<BrandsView> {
                       child: Text(
                         "Bybre Brakes",
                         style: TextStyle(
-                          fontSize: 15.0,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black,
-                        ),
+                            fontSize: 15.0,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
+                            fontFamily: "Lato"),
                       ),
                     ),
                     Padding(
@@ -107,8 +112,7 @@ class _BrandsViewState extends State<BrandsView> {
                           Text(
                             "4.8",
                             style: TextStyle(
-                              color: Colors.grey[700],
-                            ),
+                                color: Colors.grey[700], fontFamily: "Lato"),
                           ),
                           Icon(
                             Icons.star,
@@ -118,8 +122,7 @@ class _BrandsViewState extends State<BrandsView> {
                           Text(
                             "(248 Ratings)",
                             style: TextStyle(
-                              color: Colors.grey[500],
-                            ),
+                                color: Colors.grey[500], fontFamily: "Lato"),
                           ),
                         ],
                       ),
@@ -132,19 +135,21 @@ class _BrandsViewState extends State<BrandsView> {
                           Text(
                             "Rs.599",
                             style: TextStyle(
-                              fontSize: 15.0,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.green,
-                            ),
+                                fontSize: 15.0,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.green,
+                                fontFamily: "Lato"),
                           ),
                           Text(
                             "Rs.699",
                             style: TextStyle(
-                              fontSize: 15.0,
-                              color: Colors.grey,
-                              fontWeight: FontWeight.bold,
-                              decoration: TextDecoration.lineThrough,
-                            ),
+                                fontSize: 15.0,
+                                color: Colors.grey,
+                                fontWeight: FontWeight.bold,
+                                decoration: TextDecoration.lineThrough,
+                                decorationColor: Colors.grey,
+                                decorationThickness: 1.0,
+                                fontFamily: "Lato"),
                           ),
                         ],
                       ),
@@ -161,7 +166,10 @@ class _BrandsViewState extends State<BrandsView> {
             alignment: Alignment.centerLeft,
             child: Text(
               "Shop By Your History",
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: "Lato"),
             ),
           ),
         ),
@@ -214,10 +222,10 @@ class _BrandsViewState extends State<BrandsView> {
                       child: Text(
                         "Bybre Brakes",
                         style: TextStyle(
-                          fontSize: 15.0,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black,
-                        ),
+                            fontSize: 15.0,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
+                            fontFamily: "Lato"),
                       ),
                     ),
                     Padding(
@@ -227,8 +235,7 @@ class _BrandsViewState extends State<BrandsView> {
                           Text(
                             "4.8",
                             style: TextStyle(
-                              color: Colors.grey[700],
-                            ),
+                                color: Colors.grey[700], fontFamily: "Lato"),
                           ),
                           Icon(
                             Icons.star,
@@ -238,8 +245,7 @@ class _BrandsViewState extends State<BrandsView> {
                           Text(
                             "(248 Ratings)",
                             style: TextStyle(
-                              color: Colors.grey[500],
-                            ),
+                                color: Colors.grey[500], fontFamily: "Lato"),
                           ),
                         ],
                       ),
@@ -252,19 +258,21 @@ class _BrandsViewState extends State<BrandsView> {
                           Text(
                             "Rs.599",
                             style: TextStyle(
-                              fontSize: 15.0,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.green,
-                            ),
+                                fontSize: 15.0,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.green,
+                                fontFamily: "Lato"),
                           ),
                           Text(
                             "Rs.699",
                             style: TextStyle(
-                              fontSize: 15.0,
-                              color: Colors.grey,
-                              fontWeight: FontWeight.bold,
-                              decoration: TextDecoration.lineThrough,
-                            ),
+                                fontSize: 15.0,
+                                color: Colors.grey,
+                                fontWeight: FontWeight.bold,
+                                decoration: TextDecoration.lineThrough,
+                                decorationColor: Colors.grey,
+                                decorationThickness: 1.0,
+                                fontFamily: "Lato"),
                           ),
                         ],
                       ),
@@ -281,12 +289,15 @@ class _BrandsViewState extends State<BrandsView> {
             alignment: Alignment.centerLeft,
             child: Text(
               "Popular Makes",
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: "Lato"),
             ),
           ),
         ),
         Container(
-          height: 200,
+          height: 180,
           margin: EdgeInsets.all(10),
           child: GridView.builder(
             physics: NeverScrollableScrollPhysics(),
@@ -305,9 +316,9 @@ class _BrandsViewState extends State<BrandsView> {
                   borderRadius: BorderRadius.circular(10),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.grey,
+                      color: Bordercolor,
                       blurRadius: 2,
-                      spreadRadius: 0.4,
+                      spreadRadius: 0.5,
                       offset: Offset(0, 0),
                     ),
                   ],
@@ -330,13 +341,16 @@ class _BrandsViewState extends State<BrandsView> {
             alignment: Alignment.centerLeft,
             child: Text(
               "Trusted Brands",
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: "Lato"),
             ),
           ),
         ),
         Container(
           margin: EdgeInsets.all(10),
-          height: 200,
+          height: 180,
           child: GridView.builder(
             physics: NeverScrollableScrollPhysics(),
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -345,7 +359,7 @@ class _BrandsViewState extends State<BrandsView> {
               mainAxisSpacing: 10,
               crossAxisCount: 4,
             ),
-            itemCount: 8, // Set the number of items to 6
+            itemCount: 8,
             itemBuilder: (BuildContext context, int index) {
               return Container(
                 margin: EdgeInsets.all(0),
@@ -354,9 +368,9 @@ class _BrandsViewState extends State<BrandsView> {
                   borderRadius: BorderRadius.circular(10),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.grey,
+                      color: Bordercolor,
                       blurRadius: 2,
-                      spreadRadius: 0.4,
+                      spreadRadius: 0.5,
                       offset: Offset(0, 0),
                     ),
                   ],

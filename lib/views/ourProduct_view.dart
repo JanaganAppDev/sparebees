@@ -94,7 +94,10 @@ class _OurProductViewState extends State<OurProductView> {
                   alignment: Alignment.centerLeft,
                   child: Text(
                     "Tyres",
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: "Lato"),
                   ),
                 ),
               ),
@@ -155,10 +158,10 @@ class _OurProductViewState extends State<OurProductView> {
                               child: Text(
                                 "Bybre Brakes",
                                 style: TextStyle(
-                                  fontSize: 15.0,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black,
-                                ),
+                                    fontSize: 15.0,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black,
+                                    fontFamily: "Lato"),
                               ),
                             ),
                             Padding(
@@ -168,8 +171,8 @@ class _OurProductViewState extends State<OurProductView> {
                                   Text(
                                     "4.8",
                                     style: TextStyle(
-                                      color: Colors.grey[700],
-                                    ),
+                                        color: Colors.grey[700],
+                                        fontFamily: "Lato"),
                                   ),
                                   Icon(
                                     Icons.star,
@@ -179,8 +182,8 @@ class _OurProductViewState extends State<OurProductView> {
                                   Text(
                                     "(248 Ratings)",
                                     style: TextStyle(
-                                      color: Colors.grey[500],
-                                    ),
+                                        color: Colors.grey[500],
+                                        fontFamily: "Lato"),
                                   ),
                                 ],
                               ),
@@ -194,19 +197,21 @@ class _OurProductViewState extends State<OurProductView> {
                                   Text(
                                     "Rs.599",
                                     style: TextStyle(
-                                      fontSize: 15.0,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.green,
-                                    ),
+                                        fontSize: 15.0,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.green,
+                                        fontFamily: "Lato"),
                                   ),
                                   Text(
                                     "Rs.699",
                                     style: TextStyle(
-                                      fontSize: 15.0,
-                                      color: Colors.grey,
-                                      fontWeight: FontWeight.bold,
-                                      decoration: TextDecoration.lineThrough,
-                                    ),
+                                        fontSize: 15.0,
+                                        color: Colors.grey,
+                                        fontWeight: FontWeight.bold,
+                                        decoration: TextDecoration.lineThrough,
+                                        decorationColor: Colors.grey,
+                                        decorationThickness: 1.0,
+                                        fontFamily: "Lato"),
                                   ),
                                 ],
                               ),
