@@ -70,6 +70,18 @@ class _RegisterViewState extends State<RegisterView> {
                       Padding(
                         padding: EdgeInsets.symmetric(vertical: 5),
                         child: TextFormField(
+                          validator: (value) {
+                            if (value == null || value.trim().isEmpty) {
+                              return 'Please enter your name';
+                            }
+
+                            final nameRegex = RegExp(r'^[a-zA-Z0-9\s]+$');
+                            if (!nameRegex.hasMatch(value)) {
+                              return 'Please enter a valid name';
+                            }
+
+                            return null;
+                          },
                           controller: nameController,
                           cursorColor: Colors.grey,
                           decoration: InputDecoration(
@@ -89,12 +101,6 @@ class _RegisterViewState extends State<RegisterView> {
                               borderSide: BorderSide(color: Colors.grey),
                             ),
                           ),
-                          validator: (value) {
-                            if (value == null || value.isEmpty) {
-                              return "Enter your User Name";
-                            }
-                            return null;
-                          },
                         ),
                       ),
                       Align(
@@ -114,6 +120,15 @@ class _RegisterViewState extends State<RegisterView> {
                       Padding(
                         padding: EdgeInsets.symmetric(vertical: 5),
                         child: TextFormField(
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'Please enter your mobile number';
+                            }
+                            if (value.length < 10) {
+                              return 'Mobile number must be 10 digits';
+                            }
+                            return null;
+                          },
                           controller: mobileController,
                           cursorColor: Colors.grey,
                           keyboardType: TextInputType.number,
@@ -133,12 +148,6 @@ class _RegisterViewState extends State<RegisterView> {
                               borderSide: BorderSide(color: Colors.grey),
                             ),
                           ),
-                          validator: (value) {
-                            if (value == null || value.isEmpty) {
-                              return "Enter your Mobile Number";
-                            }
-                            return null;
-                          },
                         ),
                       ),
                       Align(
@@ -158,6 +167,15 @@ class _RegisterViewState extends State<RegisterView> {
                       Padding(
                         padding: EdgeInsets.symmetric(vertical: 5),
                         child: TextFormField(
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'Please enter your password';
+                            }
+                            if (value.length < 6) {
+                              return 'Password must be at least 6 characters long';
+                            }
+                            return null;
+                          },
                           obscureText: true,
                           controller: passwordController,
                           cursorColor: Colors.grey,
@@ -177,12 +195,6 @@ class _RegisterViewState extends State<RegisterView> {
                               borderSide: BorderSide(color: Colors.grey),
                             ),
                           ),
-                          validator: (value) {
-                            if (value == null || value.isEmpty) {
-                              return "Enter your Password";
-                            }
-                            return null;
-                          },
                         ),
                       ),
                       Align(
@@ -202,34 +214,36 @@ class _RegisterViewState extends State<RegisterView> {
                       Padding(
                         padding: EdgeInsets.symmetric(vertical: 5),
                         child: TextFormField(
-                          obscureText: true,
-                          controller: confirmController,
-                          cursorColor: Colors.grey,
-                          decoration: InputDecoration(
-                            contentPadding: EdgeInsets.symmetric(
-                                vertical: 15.0, horizontal: 15.0),
-                            enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: Colors.grey,
+                            obscureText: true,
+                            controller: confirmController,
+                            cursorColor: Colors.grey,
+                            decoration: InputDecoration(
+                              contentPadding: EdgeInsets.symmetric(
+                                  vertical: 15.0, horizontal: 15.0),
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Colors.grey,
+                                ),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.grey)),
+                              hintText: 'Confirm Your Password',
+                              hintStyle: TextStyle(color: Colors.grey),
+                              border: OutlineInputBorder(
+                                borderSide: BorderSide(color: Colors.grey),
                               ),
                             ),
-                            focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.grey)),
-                            hintText: 'Confirm Your Password',
-                            hintStyle: TextStyle(color: Colors.grey),
-                            border: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.grey),
-                            ),
-                          ),
-                          validator: (value) {
-                            if (value == null || value.isEmpty) {
-                              return "Confirm your Password";
-                            } else if (value != passwordController.text) {
-                              return "Passwords do not match";
-                            }
-                            return null;
-                          },
-                        ),
+                            validator: (String? confirmPassword) {
+                              final password = confirmPassword;
+                              if (confirmPassword == null ||
+                                  confirmPassword.isEmpty) {
+                                return 'Please enter your password';
+                              }
+                              if (password != passwordController.text) {
+                                return 'Passwords do not match';
+                              }
+                              return null;
+                            }),
                       ),
                       Padding(
                         padding: EdgeInsets.only(top: 5),
@@ -321,7 +335,8 @@ class _RegisterViewState extends State<RegisterView> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => LoginView()));
+                                        builder: (context) =>
+                                            NumberVerificationView()));
                               },
                               child: Text(
                                 "Login",
@@ -346,12 +361,10 @@ class _RegisterViewState extends State<RegisterView> {
                                       builder: (context) =>
                                           NumberVerificationView()));
                               /*if (_formKey.currentState!.validate()) {
-                                print("Form is valid");
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) =>
-                                            BottomBarNavigation()));
+                                        builder: (context) => NumberVerificationView()));
                               } else {
                                 null;
                               }*/

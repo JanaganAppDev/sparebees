@@ -12,9 +12,9 @@ class CarouselSliderDemo extends StatefulWidget {
 
 class _CarouselSliderDemoState extends State<CarouselSliderDemo> {
   final List<String> imgList = [
-    'lib/images/sider_img1.png',
-    'lib/images/sliderimg2.png',
-    'lib/images/sliderimg3.png',
+    'http://localhost:5000/pf003-1708403311910-568939381.jpg',
+    'http://localhost:5000/pf002-1708403156462-648590609.jpg',
+    'http://localhost:5000/pf001-1708344546665-5820791.jpg',
   ];
 
   final CarouselController controller = CarouselController();
@@ -100,7 +100,7 @@ class _CarouselSliderDemoState extends State<CarouselSliderDemo> {
                         borderRadius: BorderRadius.circular(10.0),
                         color: Colors.transparent,
                       ),
-                      child: Image.asset(
+                      child: Image.network(
                         imagePath,
                         fit: BoxFit.fill,
                       ),

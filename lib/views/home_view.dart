@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:sparebess/views/cart_view.dart';
@@ -7,6 +9,7 @@ import '../constants.dart';
 import '../widgets/brands.dart';
 import '../widgets/carouselslider.dart';
 import '../widgets/categories.dart';
+import "package:http/http.dart" as http;
 
 class Homeview extends StatefulWidget {
   Homeview({Key? key}) : super(key: key);
@@ -15,7 +18,27 @@ class Homeview extends StatefulWidget {
   State<Homeview> createState() => _HomeviewState();
 }
 
+List data = [];
+
 class _HomeviewState extends State<Homeview> {
+  Future<void> fetchData() async {
+    final url = Uri.parse('http://localhost:5000/category/fetch_category');
+    final response = await http.get(url);
+    if (response.statusCode == 200 || response.statusCode == 201) {
+      print("auth");
+      final jsonResponse = jsonDecode(response.body);
+      data = jsonResponse;
+    } else {
+      print("not match");
+    }
+  }
+
+  @override
+  void initState() {
+    fetchData();
+    super.initState();
+  }
+
   final List<String> imgList = [
     'lib/images/sider_img1.png',
     'lib/images/sliderimg2.png',

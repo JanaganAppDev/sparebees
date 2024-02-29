@@ -68,7 +68,10 @@ class _LoginViewState extends State<LoginView> {
                     cursorColor: Colors.grey,
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return "Enter your Mobile Number";
+                        return 'Please enter your mobile number';
+                      }
+                      if (value.length < 10) {
+                        return 'Mobile number must be 10 digits';
                       }
                       return null;
                     },
@@ -113,7 +116,10 @@ class _LoginViewState extends State<LoginView> {
                   child: TextFormField(
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return "Enter your Password";
+                        return 'Please enter your password';
+                      }
+                      if (value.length < 6) {
+                        return 'Password must be at least 6 characters long';
                       }
                       return null;
                     },
@@ -176,8 +182,7 @@ class _LoginViewState extends State<LoginView> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) =>
-                                      NumberVerificationView()));
+                                  builder: (context) => BottomBarNavigation()));
                         } else {}*/
                       },
                       style: ElevatedButton.styleFrom(

@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:sparebess/constants.dart';
 import 'package:sparebess/views/login_screens/login_view.dart';
 import 'package:sparebess/views/login_screens/register_view.dart';
+import 'package:sparebess/views/navigation_view.dart';
 
 class OtpView extends StatefulWidget {
-  OtpView({Key? key}) : super(key: key);
+  final String otp;
+
+  OtpView({Key? key, required this.otp}) : super(key: key);
 
   @override
   _OtpViewState createState() => _OtpViewState();
@@ -13,6 +16,8 @@ class OtpView extends StatefulWidget {
 Color OtpBox = Color(0xffD9DADA);
 
 class _OtpViewState extends State<OtpView> {
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     double screenwidth = MediaQuery.of(context).size.width;
@@ -23,83 +28,95 @@ class _OtpViewState extends State<OtpView> {
         child: SingleChildScrollView(
           child: Container(
             margin: EdgeInsets.all(15.0),
-            child: Column(
-              children: [
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical: 90.0),
-                  child: Image.asset("lib/images/welcome/sparebees_logo.png",
-                      scale: 1.5),
-                ),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    "Please wait. We will auto verify the",
-                    style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                        fontFamily: "Lato"),
-                    textAlign: TextAlign.center,
+            child: Form(
+              key: _formKey,
+              child: Column(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 90.0),
+                    child: Image.asset("lib/images/welcome/sparebees_logo.png",
+                        scale: 1.5),
                   ),
-                ),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    "OTP sent to +91 98765 43210",
-                    style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                        fontFamily: "Lato"),
-                    textAlign: TextAlign.center,
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      "Please wait. We will auto verify the",
+                      style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                          fontFamily: "Lato"),
+                      textAlign: TextAlign.center,
+                    ),
                   ),
-                ),
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical: 30.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      _textFieldOTP(first: true, last: false),
-                      _textFieldOTP(first: false, last: false),
-                      _textFieldOTP(first: false, last: false),
-                      _textFieldOTP(first: false, last: false),
-                      _textFieldOTP(first: false, last: false),
-                      _textFieldOTP(first: false, last: true),
-                    ],
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      "OTP sent to +91 98765 43210",
+                      style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                          fontFamily: "Lato"),
+                      textAlign: TextAlign.center,
+                    ),
                   ),
-                ),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 8.0),
-                  child: Container(
-                    width: screenwidth,
-                    height: 55,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => LoginView()));
-                      },
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: appthemecolor,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10.0),
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 30.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        _textFieldOTP(first: true, last: false),
+                        _textFieldOTP(first: false, last: false),
+                        _textFieldOTP(first: false, last: false),
+                        _textFieldOTP(first: false, last: false),
+                        _textFieldOTP(first: false, last: false),
+                        _textFieldOTP(first: false, last: true),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 8.0),
+                    child: Container(
+                      width: screenwidth,
+                      height: 55,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          /*Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => LoginView()));*/
+                          if (_formKey.currentState!.validate()) {
+                            print("Form is valid");
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        BottomBarNavigation()));
+                          } else {}
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: appthemecolor,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                          shadowColor: Colors.grey,
+                          elevation: 8,
                         ),
-                        shadowColor: Colors.grey,
-                        elevation: 8,
-                      ),
-                      child: Text(
-                        "Next",
-                        style: TextStyle(
+                        child: Text(
+                          "Next",
+                          style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w600,
                             color: Colors.white,
-                            fontFamily: "Lato"),
+                            fontFamily: "Lato",
+                          ),
+                        ),
                       ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),
@@ -114,7 +131,13 @@ class _OtpViewState extends State<OtpView> {
       decoration: BoxDecoration(),
       child: AspectRatio(
         aspectRatio: 1.0,
-        child: TextField(
+        child: TextFormField(
+          validator: (value) {
+            if (value == null) {
+              return 'Please enter a digit';
+            }
+            return null;
+          },
           autofocus: true,
           onChanged: (value) {
             if (value.length == 1 && last == false) {
@@ -138,12 +161,6 @@ class _OtpViewState extends State<OtpView> {
             focusedBorder: UnderlineInputBorder(
               borderSide: BorderSide(color: appthemecolor),
             ),
-            /*enabledBorder: OutlineInputBorder(
-                borderSide: BorderSide(width: 2, color: OtpBox),
-                borderRadius: BorderRadius.circular(12)),
-            focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide(width: 2, color: OtpBox),
-                borderRadius: BorderRadius.circular(12)),*/
           ),
         ),
       ),

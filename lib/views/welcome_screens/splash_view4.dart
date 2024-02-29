@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sparebess/views/login_screens/login_view.dart';
+import 'package:sparebess/views/login_screens/number_verification.dart';
 import 'package:sparebess/views/welcome_screens/splash_view1.dart';
 import 'package:sparebess/views/welcome_screens/splash_view3.dart';
 
@@ -91,7 +92,8 @@ class _SplashViewPage4State extends State<SplashViewPage4> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => LoginView()),
+                    MaterialPageRoute(
+                        builder: (context) => NumberVerificationView()),
                   );
                 },
                 style: ElevatedButton.styleFrom(
