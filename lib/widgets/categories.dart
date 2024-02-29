@@ -17,7 +17,6 @@ class _CategoriesState extends State<Categories> {
     'lib/images/sider_img1.png',
     'lib/images/sliderimg2.png',
     'lib/images/sliderimg3.png',
-    // Add more image paths as needed
   ];
   final List<String> categoryNames = [
     "Tyers",
